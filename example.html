@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Style Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
+    }
+    .random-element {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+    }
+    .controls {
+      margin-top: 20px;
+      padding: 10px;
+    }
+    .controls > * {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="random-element">Random Heading</h1>
+  <p class="random-element">A paragraph with some sample text.</p>
+  <button class="random-element">Click me</button>
+  <div class="random-element">Random div</div>
+  <ul class="random-element">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <div class="controls">
+    <label for="colorPicker">Choose Color:</label>
+    <input type="color" id="colorPicker">
+
+    <button onclick="applyColor()">Apply Color</button>
+
+    <label for="fontWeightSelector">Font Weight:</label>
+    <select id="fontWeightSelector">
+      <option value="normal">Normal</option>
+      <option value="bold">Bold</option>
+      <option value="lighter">Lighter</option>
+      <option value="bolder">Bolder</option>
+      <option value="100">100</option>
+      <option value="400">400</option>
+      <option value="700">700</option>
+      <option value="900">900</option>
+    </select>
+
+    <button onclick="applyFontWeight()">Apply Font Weight</button>
+  </div>
+
+  <script>
+    function applyColor() {
+      const color = document.getElementById('colorPicker').value;
+      document.querySelectorAll('.random-element').forEach(el => {
+        el.style.backgroundColor = color;
+        el.style.color = '#fff';
+      });
+    }
+
+    function applyFontWeight() {
+      const weight = document.getElementById('fontWeightSelector').value;
+      document.querySelectorAll('.random-element').forEach(el => {
+        el.style.fontWeight = weight;
+      });
+    }
+  </script>
+
+</body>
+</html>

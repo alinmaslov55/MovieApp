@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>All Movies Page</title>
+        <link rel="stylesheet" href="styles/all_movies.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+
+
+        <script src="scripts/all_movies.js" defer></script>
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src = "img/MOVIES_LOGO_white.png" alt="MOVIES" class="logo">
+                <div class="right-side">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="all_movies.html">All Movies</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <div class="pickers">  
+                        <input type="color" id="color-picker" value="#fff">
+                        <select id="font-picker">
+                            <option value="'Poppins', sans-serif">Poppins</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                            <option value="'Courier New', monospace">Courier New</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                            <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans MS</option>
+                        </select>
+                        <button id="reset-button"><span></span>Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="movies-controls-banner">
+            <div class="controls">
+                <ul id="list-buttons">
+                    <li><button class="sort-buttons" id="Alpha"><span class="span-button"></span>Alphabetically</button></li>
+                    <li><button class="sort-buttons" id="Year"><span class="span-button"></span>By Date</button></li>
+                    <li><button class="sort-buttons" id="Rating"><span class="span-button"></span>By Rating</button></li>
+                </ul>
+                <input type="text" id="search" placeholder="Search for a movie..."/>
+            </div>
+            <div class="movies">
+                <div class="movie-list" id="movie-list">
+                    <!-- Movie items will be dynamically inserted here -->
+                    <a class="card">
+                        <img class="poster" src="data/movies/127_Hours.jpg" alt="Movie 1">
+                        <div class="card-content">
+                            <h2>127 HOURS</h2>
+                            <p>Release Year: 2025</p>
+                            <p>Genre: Action</p>
+                            <p>Rating: 8.5</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><span></span><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2025 Designed by <span class="designer">Alin Maslov</span></p>
+            </div>
+        </footer>
+    </body>
+</html>

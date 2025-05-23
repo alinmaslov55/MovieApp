@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Web Page</title>
+        <link rel="stylesheet" href="styles/movie.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+
+
+        <script src="scripts/movie.js" defer></script>
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src = "img/MOVIES_LOGO_white.png" alt="MOVIES" class="logo">
+                <div class="right-side">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="all_movies.html">All Movies</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <div class="pickers">  
+                        <input type="color" id="color-picker" value="#fff">
+                        <select id="font-picker">
+                            <option value="'Poppins', sans-serif">Poppins</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                            <option value="'Courier New', monospace">Courier New</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                            <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans MS</option>
+                        </select>
+                        <button id="reset-button"><span></span>Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+
+            <div class="movie-details-container">
+                <div class="movie-details">
+                    <div class="div-poster">
+                        <img id="poster" src="data/movies/127_Hours.jpg" alt="Movie Poster">
+                    </div>
+                    <div class="details">
+                        <h2 id="title">Movie Title</h2>
+                        <span class="designer2">Description: </span><span class="designer" id="description">Movie description goes here</span><br>
+                        <span class="designer2">release-year: </span><span class="designer" id="release-year">Release Year:</span><br>
+                        <span class="designer2">Rating: </span><span class="designer" id="rating">Rating:</span><br>
+                        <span class="designer2">Genre: </span><span class="designer" id="genre">Genre:</span><br>
+                        <span class="designer2">Director: </span><span class="designer" id="director">Director:</span><br>
+                        <span class="designer2">Duration: </span><span class="designer" id="duration">Duration:</span><br>
+                    </div>
+                </div>
+                <div class="movie-player">
+                    
+                    <video id="video-player" controls poster="https://image.tmdb.org/t/p/w300/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg">
+                        <source src="https://www.youtube.com/watch?v=G3e-cpL7ofc" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--
+            
+        <div class="movieContainer">
+            <h1 id="movie-title">Loading ...</h1>
+            <img id="movie-poster" src="" alt="Movie Poster">
+            <div class="movieDetails">
+                <h2>Details</h2>
+                <p id="movie-description">Loading ...</p>
+                <p id="movie-release-year">Release Year: Loading ...</p>
+                <p id="movie-rating">Rating: Loading ...</p>
+                <p id="movie-genre">Genre: Loading ...</p>
+                <p id="movie-director">Director: Loading ...</p>
+            </div>
+        </div>
+        
+        -->
+
+        <footer>
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><span></span><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-google-plus"></i></a>
+                    <a href=""><span></span><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2025 Designed by <span class="designer">Alin Maslov</span></p>
+            </div>
+        </footer>
+    </body>
+</html>
