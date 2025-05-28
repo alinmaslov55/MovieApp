@@ -5,6 +5,7 @@
 }
 
 * {
+    font-weight: var(--font-weight);
     margin: 0;
     padding: 0;
     font-family: var(--font-family);
@@ -40,7 +41,7 @@
 .navbar ul li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
     position: relative;
 }
 
