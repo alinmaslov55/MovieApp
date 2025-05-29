@@ -239,8 +239,8 @@ const movies = [
 ];
 const moviesContainer = document.getElementById("movie-list");
 const searchInput = document.getElementById("search");
-let lastSortType = "none";
 const clickCounts = {};
+
 
 function displayMovies(filteredMovies) {
   moviesContainer.innerHTML = "";
@@ -286,27 +286,49 @@ function filter(){
 searchInput.addEventListener("input", filter);
 
 
+const arrowUpClass = "fa-arrow-up";
+const arrowDownClass = "fa-arrow-down";
+let lastSortType = null;
+
 function displayButtons() {
   const ul = document.getElementById("list-buttons");
-
   ul.innerHTML = ""; // Clear existing buttons
+
   buttons.forEach(button => {
     const li = document.createElement("li");
-    
+
     const btn = document.createElement("button");
     btn.id = button.id;
     btn.className = "sort-buttons";
-    btn.innerHTML = `<span class = "span-button"></span>${button.text}</button>`;
+
+    // Default arrow is up
+    btn.innerHTML = `<span class="span-button"></span>${button.text} <i class="fa-solid ${arrowUpClass}"></i>`;
+
     li.appendChild(btn);
     ul.appendChild(li);
+
     btn.addEventListener("click", () => {
       clickCounts[button.id] = (clickCounts[button.id] || 0) + 1;
       localStorage.setItem(button.id, clickCounts[button.id]);
-      // location.reload();
+
       const sortType = button.id;
+      const icon = btn.querySelector("i");
+
       if (lastSortType === sortType) {
+        // Same button clicked again – reverse sort order
         movies.reverse();
+
+        // Toggle icon direction
+        icon.classList.toggle(arrowUpClass);
+        icon.classList.toggle(arrowDownClass);
       } else {
+        // Reset all icons to up
+        document.querySelectorAll(".sort-buttons i").forEach(i => {
+          i.classList.remove(arrowDownClass);
+          i.classList.add(arrowUpClass);
+        });
+
+        // Sort new field
         if (sortType === "Alpha") {
           movies.sort((a, b) => a.title.localeCompare(b.title));
         } else if (sortType === "Year") {
@@ -314,12 +336,19 @@ function displayButtons() {
         } else if (sortType === "Rating") {
           movies.sort((a, b) => b.rating - a.rating);
         }
+
         lastSortType = sortType;
+
+        // Make sure current icon is up after new sort
+        icon.classList.remove(arrowDownClass);
+        icon.classList.add(arrowUpClass);
       }
+
       displayMovies(movies);
     });
   });
 }
+
 
 function sortButtons(){
   const clickCounts = {};
